@@ -1,0 +1,27 @@
+{
+  "name": "clappr-flvjs-playback",
+  "version": "0.0.1",
+  "description": "clappr flv playback based on flv.js",
+  "main": "dist/clappr-flvjs-playback.min.js",
+  "scripts": {
+    "release": "standard && webpack --progress",
+    "start": "webpack-dev-server",
+    "lint": "standard",
+    "fix": "standard --fix"
+  },
+  "author": "Andrey Filimonow <andrefilimono@gmail.com> (https://github.com/andrefilimono)",
+  "license": "MIT",
+  "repository": "https://github.com/andrefilimono/clappr-flvjs-playback",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.24.1",
+    "clappr": "^0.2.86",
+    "flv.js": "^1.4.0",
+    "standard": "^10.0.3",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}

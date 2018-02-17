@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FLVJSPlayback</title>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script type="text/javascript" src="flv.js/dist/flv.min.js"></script>
+  <script type="text/javascript" src="clappr-flvjs-playback.js"></script>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    Clappr.Log.setLevel(0);
+
+    var player = new Clappr.Player({
+      source: 'https://mister-ben.github.io/videojs-flvjs/bbb.flv',
+      parentId: '#player',
+      plugins: [ FLVJSPlayback ],
+      mimeType: 'video/flv',
+      playback: {
+        flvjsConfig: {
+        }
+      }
+    });
+  </script>
+</body>
+</html>
