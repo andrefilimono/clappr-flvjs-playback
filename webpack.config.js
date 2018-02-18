@@ -38,8 +38,7 @@ module.exports = {
       commonjs: 'clappr',
       commonjs2: 'clappr',
       root: 'Clappr'
-    },
-    'flv.js': 'flvjs'
+    }
   },
   plugins: plugins,
   resolve: {
@@ -47,10 +46,7 @@ module.exports = {
   },
   devtool: 'source-maps',
   devServer: {
-    contentBase: [
-      path.join(__dirname, 'public'),
-      path.join(__dirname, 'node_modules')
-    ],
+    contentBase: path.join(__dirname, 'public'),
     disableHostCheck: true,
     compress: true,
     host: '0.0.0.0',
