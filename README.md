@@ -12,7 +12,7 @@ Add Clappr and the plugin scripts to your HTML:
 ```html
 <head>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-  <script type="text/javascript" src="dist/clappr-flvjs-playback.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-flvjs-playback@latest/dist/clappr-flvjs-playback.min.js"></script>
 </head>
 ```
 
