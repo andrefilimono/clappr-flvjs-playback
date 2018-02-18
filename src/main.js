@@ -1,4 +1,4 @@
-import { HTML5Video, Events, Log } from 'clappr'
+import { HTML5Video, Events, Log, Playback } from 'clappr'
 import flvjs from 'flv.js'
 
 const MIMETYPES = ['video/flv', 'video/x-flv']
@@ -38,6 +38,7 @@ class FLVJSPlayback extends HTML5Video {
       url: this.options.src
     }
     const flvjsConfig = this.options.playback.flvjsConfig || {}
+    this._isLive = flvjsConfig.isLive || false
     this._player = flvjs.createPlayer(mediaDataSource, flvjsConfig)
     this._player.on(flvjs.Events.ERROR, this._onError.bind(this))
     this._player.attachMediaElement(this.el)
@@ -63,6 +64,9 @@ class FLVJSPlayback extends HTML5Video {
     delete this._player
   }
 
+  getPlaybackType () {
+    return (this.isReady && this._isLive ? Playback.LIVE : Playback.VOD)
+  }
 
   play () {
     !this._player && this._setup()
