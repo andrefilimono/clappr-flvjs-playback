@@ -63,8 +63,6 @@ class FLVJSPlayback extends HTML5Video {
       return
     }
 
-    this._player.unload()
-    this._player.detachMediaElement()
     this._player.destroy()
     delete this._player
   }
