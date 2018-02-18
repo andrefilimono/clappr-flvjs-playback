@@ -51,11 +51,7 @@ class FLVJSPlayback extends HTML5Video {
   }
 
   _ready () {
-    if (!this._player) {
-      return
-    }
-
-    super._ready()
+    this._player && super._ready()
   }
 
   _destroy () {
@@ -67,11 +63,9 @@ class FLVJSPlayback extends HTML5Video {
     delete this._player
   }
 
-  play () {
-    if (!this._player) {
-      this._setup()
-    }
 
+  play () {
+    !this._player && this._setup()
     super.play()
   }
 
