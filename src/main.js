@@ -34,7 +34,7 @@ class FLVJSPlayback extends HTML5Video {
 
   _setup () {
     const mediaDataSource = {
-      type: 'flv',
+      type: EXTENSION,
       url: this.options.src
     }
     const flvjsConfig = this.options.playback.flvjsConfig || {}
