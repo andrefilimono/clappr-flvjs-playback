@@ -43,16 +43,11 @@ class FLVJSPlayback extends HTML5Video {
     this._player.on(flvjs.Events.ERROR, this._onError.bind(this))
     this._player.attachMediaElement(this.el)
     this._player.load()
-    this._ready()
   }
 
   _onError (type, details, data) {
     Log.error(`flvjs: ${type}: ${details}`, data)
     this.trigger(Events.PLAYBACK_ERROR, { type, details, data }, this.name)
-  }
-
-  _ready () {
-    this._player && super._ready()
   }
 
   _destroy () {
