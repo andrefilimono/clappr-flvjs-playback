@@ -9,6 +9,10 @@ class FLVJSPlayback extends HTML5Video {
     return 'flvjs_playback'
   }
 
+  get isHTML5Video () {
+    return true
+  }
+
   get flvjs () {
     return this._player
   }
