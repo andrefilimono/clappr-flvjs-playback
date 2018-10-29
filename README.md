@@ -28,6 +28,7 @@ var player = new Clappr.Player({
   ],
   playback: {
     flvjsConfig: {
+      enableLogging: true, // default is "false"
       // Params from flv.js
     }
   }
@@ -37,6 +38,8 @@ var player = new Clappr.Player({
 ## Configuration
 
 The parameters of `flvjsConfig` are completely equal to the parameters of [flv.js](https://github.com/Bilibili/flv.js/blob/master/docs/api.md#config)
+
+`enableLogging` - enable or disable flv.js logging
 
 ## Development
 

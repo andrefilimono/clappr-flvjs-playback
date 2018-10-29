@@ -43,6 +43,10 @@ class FLVJSPlayback extends HTML5Video {
     }
     const flvjsConfig = this.options.playback.flvjsConfig || {}
     this._isLive = flvjsConfig.isLive || false
+
+    const enableLogging = flvjsConfig.enableLogging || false
+    flvjs.LoggingControl.enableAll = enableLogging
+
     this._player = flvjs.createPlayer(mediaDataSource, flvjsConfig)
     this._player.on(flvjs.Events.ERROR, this._onError.bind(this))
     this._player.attachMediaElement(this.el)
