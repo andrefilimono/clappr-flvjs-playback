@@ -8,11 +8,12 @@ A [clappr](https://github.com/clappr/clappr) FLV playback based on [flv.js](http
 
 ## Usage
 
-Add Clappr and the plugin scripts to your HTML:
+Add Clappr, flv.js and the plugin scripts to your HTML:
 
 ```html
 <head>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-flvjs-playback@latest/dist/clappr-flvjs-playback.min.js"></script>
 </head>
 ```

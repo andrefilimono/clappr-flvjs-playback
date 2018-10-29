@@ -38,7 +38,8 @@ module.exports = {
       commonjs: 'clappr',
       commonjs2: 'clappr',
       root: 'Clappr'
-    }
+    },
+    'flv.js': 'flvjs'
   },
   plugins: plugins,
   resolve: {

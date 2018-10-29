@@ -17,10 +17,9 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
-    "flv.js": "^1.4.0",
+    "standard": "^11.0.0",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^3.11.0",
-    "standard": "^11.0.0",
     "webpack-dev-server": "^2.11.1"
   }
 }
