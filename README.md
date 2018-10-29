@@ -50,7 +50,7 @@ Install dependencies:
 yarn install
 ```
 
-Start HTTP dev server `http://0.0.0.0:8080`:
+Start HTTP dev server `http://localhost:8080`:
 
 ```shell
 yarn start
