@@ -21,11 +21,13 @@ Add Clappr, flv.js and the plugin scripts to your HTML:
 Then just add `FLVJSPlayback` into the list of plugins of your player instance, and the options for the plugin go in the `flvjsConfig` property as shown below.
 
 ```javascript
+var FLVPlayback = FLVJSPlayback.default;
+
 var player = new Clappr.Player({
   source: "http://your.flv.video",
   mimeType: 'video/flv',
   plugins: [
-    FLVJSPlayback
+    FLVPlayback
   ],
   playback: {
     flvjsConfig: {
