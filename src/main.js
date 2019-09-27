@@ -55,7 +55,15 @@ class FLVJSPlayback extends HTML5Video {
 
   _onError (type, details, data) {
     Log.error(`flvjs: ${type}: ${details}`, data)
-    this.trigger(Events.PLAYBACK_ERROR, { type, details, data }, this.name)
+
+    const formattedError = this.createError({
+      code: `${type}_${details}`,
+      description: data.msg || details,
+      raw: data
+    })
+
+    this.trigger(Events.PLAYBACK_ERROR, formattedError)
+    this.stop()
   }
 
   _destroy () {
