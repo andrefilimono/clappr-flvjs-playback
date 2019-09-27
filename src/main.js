@@ -28,8 +28,8 @@ class FLVJSPlayback extends HTML5Video {
     return flvjs.isSupported() && isFLV
   }
 
-  constructor (options) {
-    super(options)
+  constructor (...options) {
+    super(...options)
     options.autoPlay && this.play()
   }
 
