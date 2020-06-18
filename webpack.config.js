@@ -10,7 +10,8 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     library: pluginLibrary,
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    libraryExport: 'default'
   },
   externals: {
     clappr: {
@@ -38,7 +39,7 @@ const config = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env']
+            presets: ['@babel/preset-env']
           }
         }
       }

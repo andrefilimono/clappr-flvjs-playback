@@ -14,14 +14,12 @@
   <div id="player"></div>
 
   <script>
-    const FLVPlayback = FLVJSPlayback.default;
-
     Clappr.Log.setLevel(0);
 
     var player = new Clappr.Player({
       source: 'https://mister-ben.github.io/videojs-flvjs/bbb.flv',
       parentId: '#player',
-      plugins: [ FLVPlayback ],
+      plugins: [ FLVJSPlayback ],
       mimeType: 'video/flv',
       playback: {
         flvjsConfig: {
