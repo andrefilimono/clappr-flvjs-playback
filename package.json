@@ -9,7 +9,7 @@
     "lint": "standard",
     "fix": "standard --fix"
   },
-  "author": "Andrey Filimonow <andrefilimono@gmail.com> (https://github.com/andrefilimono)",
+  "author": "Andrey Filimonov <andrefilimono@gmail.com> (https://github.com/andrefilimono)",
   "license": "MIT",
   "repository": "https://github.com/andrefilimono/clappr-flvjs-playback",
   "devDependencies": {
