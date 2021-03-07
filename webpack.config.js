@@ -15,12 +15,7 @@ const config = {
     libraryExport: 'default'
   },
   externals: {
-    clappr: {
-      amd: 'clappr',
-      commonjs: 'clappr',
-      commonjs2: 'clappr',
-      root: 'Clappr'
-    },
+    '@clappr/core': '@clappr/core',
     'flv.js': 'flvjs'
   },
   plugins: [
@@ -52,10 +47,8 @@ const config = {
 module.exports = (_, { mode }) => {
   if (mode === 'production') {
     config.output.filename = `${pluginName}.min.js`
-    config.devtool = 'source-map'
   } else {
     config.output.filename = `${pluginName}.js`
-    config.devtool = 'inline-source-map'
   }
 
   return config
