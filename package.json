@@ -3,12 +3,18 @@
   "version": "3.0.0",
   "description": "clappr flv playback based on flv.js",
   "main": "dist/clappr-flvjs-playback.min.js",
+  "files": [
+    "dist/clappr-flvjs-playback.min.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "release": "webpack --mode production",
-    "prerelease": "yarn lint",
+    "build": "webpack --mode production",
+    "prebuild": "yarn lint",
     "start": "webpack-dev-server --mode development",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepublishOnly": "yarn build"
   },
   "author": "Andrey Filimonov <andrefilimono@gmail.com> (https://github.com/andrefilimono)",
   "license": "MIT",
