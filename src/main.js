@@ -10,6 +10,7 @@ export default class FLVJSPlayback extends HTML5Video {
   }
 
   get supportedVersion () {
+    // eslint-disable-next-line no-undef
     return { min: CLAPPR_CORE_VERSION }
   }
 
@@ -93,4 +94,5 @@ FLVJSPlayback.canPlay = (resource, mimeType = '') => {
   return flvjs.isSupported() && isFLV
 }
 
+// eslint-disable-next-line no-undef
 FLVJSPlayback.version = () => VERSION

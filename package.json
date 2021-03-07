@@ -4,23 +4,28 @@
   "description": "clappr flv playback based on flv.js",
   "main": "dist/clappr-flvjs-playback.min.js",
   "scripts": {
-    "release": "standard && webpack --mode production",
+    "release": "webpack --mode production",
+    "prerelease": "yarn lint",
     "start": "webpack-dev-server --mode development",
-    "lint": "standard",
-    "fix": "standard --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "Andrey Filimonov <andrefilimono@gmail.com> (https://github.com/andrefilimono)",
   "license": "MIT",
   "repository": "https://github.com/andrefilimono/clappr-flvjs-playback",
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
     "@clappr/core": "^0.4.17",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
+    "elint": "^2.0.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
     "flv.js": "^1.5.0",
-    "standard": "^14.3.4",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }

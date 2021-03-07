@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/clappr-flvjs-playback.svg)](https://badge.fury.io/js/clappr-flvjs-playback)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![](https://data.jsdelivr.com/v1/package/npm/clappr-flvjs-playback/badge)](https://www.jsdelivr.com/package/npm/clappr-flvjs-playback)
 
 # FLVJSPlayback
@@ -79,7 +80,7 @@ yarn lint
 Fix lint errors:
 
 ```shell
-yarn fix
+yarn lint:fix
 ```
 
 ## Issues

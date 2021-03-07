@@ -1,0 +1,6 @@
+{
+  "extends": "standard",
+  "ignorePatterns": [
+    "dist"
+  ]
+}
