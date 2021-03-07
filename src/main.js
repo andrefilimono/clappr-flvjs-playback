@@ -1,12 +1,16 @@
-import { HTML5Video, Events, Log, Playback } from 'clappr'
+import { HTML5Video, Events, Log, Playback } from '@clappr/core'
 import flvjs from 'flv.js'
 
 const MIMETYPES = ['video/flv', 'video/x-flv']
 const EXTENSION = 'flv'
 
-class FLVJSPlayback extends HTML5Video {
+export default class FLVJSPlayback extends HTML5Video {
   get name () {
-    return 'flvjs_playback'
+    return 'flvjs'
+  }
+
+  get supportedVersion () {
+    return { min: CLAPPR_CORE_VERSION }
   }
 
   get isHTML5Video () {
@@ -17,32 +21,37 @@ class FLVJSPlayback extends HTML5Video {
     return this._player
   }
 
-  static get version () {
-    return VERSION // eslint-disable-line
+  getPlaybackType () {
+    return this._playbackType
   }
 
-  static canPlay (resource, mimeType = '') {
-    const resourceParts = (resource.split('?')[0].match(/.*\.(.*)$/) || [])
-    const isFLV = ((resourceParts.length > 1 && resourceParts[1].toLowerCase() === EXTENSION) ||
-                    MIMETYPES.indexOf(mimeType) !== -1)
-    return flvjs.isSupported() && isFLV
+  play () {
+    !this._player && this._setup()
+    super.play()
   }
 
-  constructor (...options) {
-    super(...options)
-    options.autoPlay && this.play()
+  stop () {
+    super.stop()
+    this._destroy()
+  }
+
+  destroy () {
+    this._destroy()
+    super.destroy()
   }
 
   // skipping setup `setupSrc` on tag video
-  _setupSrc () {}
+  _setupSrc () { }
 
   _setup () {
+    this._destroy()
+
     const mediaDataSource = {
       type: EXTENSION,
       url: this.options.src
     }
     const flvjsConfig = this.options.playback.flvjsConfig || {}
-    this._isLive = flvjsConfig.isLive || false
+    this._playbackType = flvjsConfig.isLive ? Playback.LIVE : Playback.VOD
 
     const enableLogging = flvjsConfig.enableLogging || false
     flvjs.LoggingControl.enableAll = enableLogging
@@ -74,25 +83,13 @@ class FLVJSPlayback extends HTML5Video {
     this._player.destroy()
     delete this._player
   }
-
-  getPlaybackType () {
-    return (this.isReady && this._isLive ? Playback.LIVE : Playback.VOD)
-  }
-
-  play () {
-    !this._player && this._setup()
-    super.play()
-  }
-
-  stop () {
-    super.stop()
-    this._destroy()
-  }
-
-  destroy () {
-    this._destroy()
-    super.destroy()
-  }
 }
 
-export default FLVJSPlayback
+FLVJSPlayback.canPlay = (resource, mimeType = '') => {
+  const resourceParts = (resource.split('?')[0].match(/.*\.(.*)$/) || [])
+  const isFLV = ((resourceParts.length > 1 && resourceParts[1].toLowerCase() === EXTENSION) ||
+    MIMETYPES.indexOf(mimeType) !== -1)
+  return flvjs.isSupported() && isFLV
+}
+
+FLVJSPlayback.version = () => VERSION

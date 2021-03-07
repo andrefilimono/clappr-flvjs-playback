@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const version = JSON.stringify(require('./package.json').version)
+const clapprCoreVersion = JSON.stringify(require('@clappr/core/package.json').version)
 
 const pluginName = 'clappr-flvjs-playback'
 const pluginLibrary = 'FLVJSPlayback'
@@ -24,7 +25,8 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      VERSION: version
+      VERSION: version,
+      CLAPPR_CORE_VERSION: clapprCoreVersion
     })
   ],
   devServer: {

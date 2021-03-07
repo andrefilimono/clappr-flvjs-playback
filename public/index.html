@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>FLVJSPlayback</title>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/core@latest/dist/clappr-core.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js"></script>
   <script type="text/javascript" src="clappr-flvjs-playback.js"></script>
 </head>
+
 <body>
   <div id="player"></div>
 
   <script>
     Clappr.Log.setLevel(0);
 
-    var player = new Clappr.Player({
+    const player = new Clappr.Player({
       source: 'https://mister-ben.github.io/videojs-flvjs/bbb.flv',
-      parentId: '#player',
-      plugins: [ FLVJSPlayback ],
+      parentId: "#player",
+      plugins: [FLVJSPlayback],
       mimeType: 'video/flv',
+      mute: true,
+      autoPlay: false,
       playback: {
+        controls: true,
         flvjsConfig: {
           enableLogging: true
         }
       }
     });
+
+    !player.options.autoPlay &&
+      player.core &&
+      player.core.activePlayback &&
+      player.core.activePlayback.el.addEventListener('play', () => player.play(), { once: true });
   </script>
 </body>
+
 </html>
