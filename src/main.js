@@ -1,4 +1,4 @@
-import { HTML5Video, Events, Log, Playback } from '@clappr/core'
+import { HTML5Video, Events, Log, Playback, PlayerError } from '@clappr/core'
 import flvjs from 'flv.js'
 
 const MIMETYPES = ['video/flv', 'video/x-flv']
@@ -66,9 +66,10 @@ export default class FLVJSPlayback extends HTML5Video {
     Log.error(`flvjs: ${type}: ${details}`, data)
 
     const formattedError = this.createError({
-      code: `${type}_${details}`,
+      code: data.code || type,
       description: data.msg || details,
-      raw: data
+      raw: data,
+      level: PlayerError.Levels.FATAL
     })
 
     this.trigger(Events.PLAYBACK_ERROR, formattedError)
