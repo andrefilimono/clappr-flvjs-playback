@@ -1,6 +1,6 @@
 {
   "name": "clappr-flvjs-playback",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "clappr flv playback based on flv.js",
   "main": "dist/clappr-flvjs-playback.min.js",
   "scripts": {
