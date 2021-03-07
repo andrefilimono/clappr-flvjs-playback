@@ -14,6 +14,10 @@ Add Clappr, flv.js and the plugin scripts to your HTML:
 ```html
 <head>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <!--
+  THIS PLUGIN IS ALSO COMPATIBLE WITH CLAPPR-CORE
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/core@latest/dist/clappr-core.min.js"></script>
+  --->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flv.js@latest/dist/flv.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-flvjs-playback@latest/dist/clappr-flvjs-playback.min.js"></script>
 </head>
