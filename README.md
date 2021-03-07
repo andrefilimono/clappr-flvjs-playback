@@ -65,12 +65,12 @@ Upgrade packages to latest version:
 yarn upgrade --latest
 ```
 
-## Release
+## Build
 
 Minified version of plugin will be placed at `dist/clappr-flvjs-playback.min.js`
 
 ```shell
-yarn release
+yarn build
 ```
 
 ## Lint
